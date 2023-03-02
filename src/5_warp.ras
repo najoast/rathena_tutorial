@@ -1,0 +1,9 @@
+prontera,160,168,0	warp	testwarp	1,1,prontera,161,152
+
+prontera,161,164,1	script	TestWarpSwitch	4_M_BIBI,{
+	if (select("Open:Close") == 1)
+		enablenpc "testwarp";
+	else
+		disablenpc "testwarp";
+	end;
+}
