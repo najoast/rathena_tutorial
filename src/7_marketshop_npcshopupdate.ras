@@ -1,46 +1,34 @@
-//* --------------------- shop ---------------------
-
-// 带坐标的商店,默认价格
-// prontera,160,160,6	shop	TestShop1	-1,512:-1,513:-1,514:-1
-
-// // 带坐标的商店,自定义价格
-// prontera,160,162,6	shop	TestShop2	-1,512:1,513:5,514:10
-
-// 不带坐标的商店,默认价格
--	shop	TestShop3	-1,512:-1,513:-1,514:-1
-// 通过一个普通 NPC 打来该商店
-prontera,160,164,4	script	TestShop3Owner	1_F_02,{
-	mes "[TestShop3Owner]";
-	mes "您好，我将为您打开 TestShop3";
-	close2;
-	callshop "TestShop3";
-}
 
 
-// 定义一个 Market Shop
+//* -------------------------------------
+//* 定义一个带坐标的 Market Shop
+prontera,150,160,3	marketshop	testmarketshop0	726,714:1000:2,512:10:20,513:-1:10
+
+//* -------------------------------------
+//* 定义一个匿名 Market Shop
 -	marketshop	testmarketshop1	FAKE_NPC,714:1000:2,512:10:20,513:-1:10
 
 // 通过 NPC 打开该 Market Shop
-prontera,160,160,3	script	TestMarketshop1Npc	4_M_04,{
+prontera,152,160,3	script	TestMarketshop1Npc	4_M_04,{
 	mes "[TestMarketshop1Npc]";
 	mes "我们每天限量销售 2 个 <ITEM>华丽金属<INFO>714</INFO></ITEM>";
 	close2;
 	callshop "testmarketshop1";
 	end;
-
-// OnHour00:
-// 	npcshopupdate "testmarketshop1",714,0,100;
-// 	end;
 }
 
-prontera,150,160,3	script	TestMarketshop1Refresh	4_M_04,3,3,{
-// OnTouch:
+//* -------------------------------------
+//* 刷新上面两个商店
+prontera,154,160,3	script	TestMarketshop1Refresh	4_M_04,{
 	npctalk "商店刷新啦！";
-	npcshopupdate "testmarketshop1",714,0,100;
+	npcshopupdate "testmarketshop0",714,0,5;
+	npcshopupdate "testmarketshop0",512,0,5;
+	npcshopupdate "testmarketshop0",513,0,5;
+	npcshopupdate "testmarketshop1",714,0,2;
 	end;
 }
 
-prontera,152,160,3	script	TestMarketshop2Refresh	4_M_04,3,3,{
+prontera,152,160,3	script	TestMarketshop2Refresh	4_M_04,{
 	if (select("Yes:No") == 1) {
 		npctalk "商店刷新啦！";
 		npcshopupdate "testmarketshop1",714,0,100;
@@ -48,7 +36,7 @@ prontera,152,160,3	script	TestMarketshop2Refresh	4_M_04,3,3,{
 	end;
 }
 
-prontera,154,160,3	script	TestMarketshop3Refresh	4_M_04,3,3,{
+prontera,154,160,3	script	TestMarketshop3Refresh	4_M_04,{
 	mes "请分别输入<ITEM>华丽金属<INFO>714</INFO></ITEM>的价格和数量";
 	next;
 	input .@price;
@@ -59,10 +47,9 @@ prontera,154,160,3	script	TestMarketshop3Refresh	4_M_04,3,3,{
 	close2;
 
 	npctalk "商店刷新啦！";
-	npcshopupdate "testmarketshop1",714,.@price,.@number;
+	npcshopupdate "testmarketshop0",714,.@price,.@number;
 	end;
 }
-
 
 prontera,160,162,3	script	TestMarketshop1Refresh	4_M_04,{
 	mes "[Optamara Crew]";
