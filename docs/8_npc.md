@@ -45,5 +45,4 @@ TriggerX 和 triggerY（如果给定）将定义一个区域，以 NPC 为中心
 # 相关链接
 * 官方文档：https://github.com/najoast/rathena_script_commands/blob/master/manual/3.top-level-commands.md#define-an-npc-object
 * SPR Conview 工具下载：https://ratemyserver.net/index.php?page=download_tool
-* 本视频示例代码：https://github.com/najoast/rathena-tutorial/blob/bd354fd11523a842a64e2b0b633272da6f61f425/src/8_npc.ras
-* 本文档可读性更高的地址：https://github.com/najoast/rathena-tutorial/blob/bd354fd11523a842a64e2b0b633272da6f61f425/docs/8_npc.md
+* 本视频示例代码：https://github.com/najoast/rathena_tutorial/blob/ba91c92537c3e97c66df4228d7b328f6b4c6bfb2/src/8_npc.ras
