@@ -1,0 +1,63 @@
+
+// 使用NPC精灵ID
+prontera,152,160,4	script	Test Npc 1	403,{
+	mes "Hello, I'm Test Npc 1";
+	close;
+}
+
+// 使用预定义宏
+prontera,154,160,4	script	Test Npc 2	4_BLUEWOLF,{
+	mes "Hello, I'm Test Npc 2";
+	close;
+}
+
+// 使用怪物ID
+prontera,156,160,4	script	Test Npc 3	1004,{
+	mes "Hello, I'm Test Npc 3";
+	close;
+}
+
+// 测试隐藏可点击NPC
+prontera,145,176,4	script	Test Npc 4	HIDDEN_NPC,{
+	mes "Hello, I'm Test Npc 4";
+	close;
+}
+prontera,150,176,4	script	Test Npc 5	HIDDEN_NPC,{
+	mes "Hello, I'm Test Npc 5";
+	close;
+}
+
+// Test FAKE_NPC
+prontera,158,160,4	script	Test Npc 6	FAKE_NPC,{
+	mes "Hello, I'm Test Npc 6";
+	close;
+}
+
+// 测试朝向,以155,150为正中心，半径为5的8个方向上分别放置NPC
+// 测试朝向,以155,150为正中心，半径为5的8个方向上分别放置NPC
+prontera,155,237,0	shop	TestShop0	4_F_HUNTER_EVIL,512:-1
+prontera,150,232,1	shop	TestShop1	4_F_HUNTER_EVIL,512:-1
+prontera,145,227,2	shop	TestShop2	4_F_HUNTER_EVIL,512:-1
+prontera,150,222,3	shop	TestShop3	4_F_HUNTER_EVIL,512:-1
+prontera,155,217,4	shop	TestShop4	4_F_HUNTER_EVIL,512:-1
+prontera,160,222,5	shop	TestShop5	4_F_HUNTER_EVIL,512:-1
+prontera,165,227,6	shop	TestShop6	4_F_HUNTER_EVIL,512:-1
+prontera,160,232,7	shop	TestShop7	4_F_HUNTER_EVIL,512:-1
+
+// 测试NPC触发区域
+prontera,156,170,4	script	波利#TestNpcTrigger1	909,2,2,{
+	mes "[波利]";
+	mes "你好呀，我是波利，请不要打我！";
+	close;
+OnTouch:
+	npctalk "你离我太近了，送你一个小苹果，请离我远一点！";
+	getitem 512,1;
+	end;
+}
+
+/*
+# 浮动NPC
+* 把`<map name>,<x>,<y>,<facing>`换成`-`，就是浮动NPC了
+* 浮动NPC无法通过正常方式触发
+* 可以通过定时标签触发，商店类的可以通过 callshop 触发
+*/
