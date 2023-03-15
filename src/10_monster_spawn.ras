@@ -18,10 +18,17 @@ prontera,152,280	monster	波利,10	1002,1,1000,5000,"TestMonsterDeath::OnMonster
 
 prontera,161,287,4	script	TestMonsterDeath	767,{
 	mes "每当你杀一只波利，我都会为你欢呼";
+	mes "当你杀满10只波利时，我会奖励你一个<ITEM>苹果<INFO>512</INFO></ITEM>";
+	mes "当前已击杀 ^FF0000" + killnum + " ^000000 只波利";
 	close;
 
 OnMonsterDeath:
-	announce "哇, 神勇无比的" + strcharinfo(0) + "消灭了一只波利！",bc_blue|bc_all;
+	killnum += 1;
+	npctalk "哇, 神勇无比的" + strcharinfo(0) + "消灭了" + killnum + "只波利！";
+	if (killnum == 10) {
+		announce "哇, 神勇无比的" + strcharinfo(0) + "消灭了10只波利，已经超神了，奖励小苹果一个！",bc_blue|bc_all;
+		getitem 512,1;
+	}
 	end;
 }
 
