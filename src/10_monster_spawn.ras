@@ -1,0 +1,40 @@
+// 固定点、默认等级、刷2只波利
+prontera,152,280	monster	波利	1002,2
+
+// 10x10矩形、默认等级、刷2只波利
+prontera,152,280,10,10	monster	波利	1002,2
+
+// 10x10矩形、指定等级、刷2只波利
+prontera,152,280,10,10	monster	波利,10	1002,2
+
+// 固定点、指定等级、刷1只波利、指定1秒延迟
+prontera,152,280	monster	波利,10	1002,1,1000
+
+// 固定点、指定等级、刷1只波利、指定1+0~9秒延迟
+prontera,152,280	monster	波利,10	1002,1,5000,9000
+
+// 固定点、指定等级、刷1只波利、指定1+0~5秒延迟、死亡脚本
+prontera,152,280	monster	波利,10	1002,1,1000,5000,"TestMonsterDeath::OnMonsterDeath"
+
+prontera,161,287,4	script	TestMonsterDeath	767,{
+	mes "每当你杀一只波利，我都会为你欢呼";
+	close;
+
+OnMonsterDeath:
+	announce "哇, 神勇无比的" + strcharinfo(0) + "消灭了一只波利！",bc_blue|bc_all;
+	end;
+}
+
+// 固定点、指定等级、刷2只波利、指定1+0~5秒延迟、死亡脚本
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",0
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",1
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2
+
+
+// 固定点、指定等级、刷2只波利、指定1+0~5秒延迟、死亡脚本
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,1
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,2
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,3
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,4
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,5
+prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,6
