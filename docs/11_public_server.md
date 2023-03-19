@@ -39,7 +39,7 @@
 1. 修改 `src/map/clif_obfuscation.hpp` 里对应版本的 `packet_keys`。
 
 客户端修改：
-1. 下载并安装 [Nemo](https://gitlab.com/4144/Nemo)。
+1. 下载并安装 [Nemo](https://gitlab.com/4144/Nemo)（[备用链接](https://pan.baidu.com/s/1gh7U2sr8GX45EF4b7FrYRA?pwd=t4ba)）。
 2. 选择一个要修改的客户端版本，下载其主程序并使用Nemo加载。
 3. 点击 `Enable packets id encryption`，在弹出的窗口中修改3个Key。
 4. 确保 `Disable packets id encryption` 处于未选中状态。
