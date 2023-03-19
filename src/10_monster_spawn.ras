@@ -1,21 +1,22 @@
 // 固定点、默认等级、刷2只波利
 prontera,152,280	monster	波利	1002,2
 
-// 10x10矩形、默认等级、刷2只波利
+// 10x10正方形、默认等级、刷2只波利
 prontera,152,280,10,10	monster	波利	1002,2
 
-// 10x10矩形、指定等级、刷2只波利
+// 10x10正方形、指定等级、刷2只波利
 prontera,152,280,10,10	monster	波利,10	1002,2
 
-// 固定点、指定等级、刷1只波利、指定1秒延迟
+// 固定点、指定等级、刷1只波利、1秒重生
 prontera,152,280	monster	波利,10	1002,1,1000
 
-// 固定点、指定等级、刷1只波利、指定1+0~9秒延迟
+// 固定点、指定等级、刷1只波利、5+0~9秒重生
 prontera,152,280	monster	波利,10	1002,1,5000,9000
 
 // 固定点、指定等级、刷1只波利、指定1+0~5秒延迟、死亡脚本
 prontera,152,280	monster	波利,10	1002,1,1000,5000,"TestMonsterDeath::OnMonsterDeath"
 
+// 杀怪脚本挂靠的NPC
 prontera,161,287,4	script	TestMonsterDeath	767,{
 	mes "每当你杀一只波利，我都会为你欢呼";
 	mes "当你杀满10只波利时，我会奖励你一个<ITEM>苹果<INFO>512</INFO></ITEM>";
@@ -32,16 +33,17 @@ OnMonsterDeath:
 	end;
 }
 
-// 固定点、指定等级、刷2只波利、指定1+0~5秒延迟、死亡脚本
+// 固定点、指定等级、刷1只波利、2秒重生、死亡脚本、小中大体型各来一只
 prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",0
 prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",1
 prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2
 
 
-// 固定点、指定等级、刷2只波利、指定1+0~5秒延迟、死亡脚本
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,1
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,2
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,3
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,4
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,5
-prontera,152,280	monster	波利,10	1002,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,6
+// 固定点、指定等级、刷1只波利、2秒重生、死亡脚本、大体型、6种AI各来一只
+// 注：由于波利是最基础的怪，所以有些AI在它身上不生效，换高级点的怪才会生效
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,1
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,2
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,3
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,4
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,5
+prontera,152,280	monster	波利,10	1697,1,2000,0,"TestMonsterDeath::OnMonsterDeath",2,6
