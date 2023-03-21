@@ -233,17 +233,17 @@ Slots: 1
 ```yml
 # 示例一，所有职业可装备
 Jobs:
-	All: true
+  All: true
 
 # 示例二，只有初心者和超级初心者可装备
 Jobs:
-	Novice: true
-	SuperNovice: true
+  Novice: true
+  SuperNovice: true
 
 # 示例三，铁匠和骑士可装备
 Jobs:
-	Blacksmith: true
-	Knight: true
+  Blacksmith: true
+  Knight: true
 ```
 
 ## Classes
@@ -267,16 +267,16 @@ Jobs:
 ```yml
 # 示例一，所有职业可用
 Classes:
-	All: true
+  All: true
 
 # 示例二，普通职业可用
 Classes:
-	Normal: true
+  Normal: true
 
 # 示例三，普通职业和进阶职业可用
 Classes:
-	Normal: true
-	Upper: true
+  Normal: true
+  Upper: true
 ```
 
 ## Gender
@@ -326,16 +326,16 @@ Gender: Both
 ```yml
 # 示例一，武器和盾牌位可装备
 Locations:
-	Both_Hand: true
+  Both_Hand: true
 
 # 示例二，盾牌位可装备
 Locations:
-	Left_Hand: true
+  Left_Hand: true
 
 # 示例三：头饰中、下（哥布林面具 2297）
 Locations:
-	Head_Low: true
-	Head_Mid: true
+  Head_Low: true
+  Head_Mid: true
 ```
 
 ## WeaponLevel
@@ -416,17 +416,17 @@ Gradable: true
 ```yml
 # 单个标记
 Flags:
-	BuyingStore: true
+  BuyingStore: true
 
 # 多个标记
 Flags:
-	DeadBranch: true
-	Container: true
-	UniqueId: true
-	BindOnEquip: true
-	DropAnnounce: true
-	NoConsume: true
-	DropEffect: true
+  DeadBranch: true
+  Container: true
+  UniqueId: true
+  BindOnEquip: true
+  DropAnnounce: true
+  NoConsume: true
+  DropEffect: true
 ```
 
 ## Delay
@@ -440,8 +440,8 @@ Flags:
 配置示例
 ```yml
 Delay:
-	Duration: 5000
-	Status: Reuse_Limit_F
+  Duration: 5000
+  Status: Reuse_Limit_F
 ```
 
 ## Stack
@@ -458,11 +458,11 @@ Delay:
 配置示例
 ```yml
 Stack:
-	Amount: 100
-	Inventory: true
-	Cart: true
-	Storage: true
-	GuildStorage: true
+  Amount: 100
+  Inventory: true
+  Cart: true
+  Storage: true
+  GuildStorage: true
 ```
 
 ## NoUse
@@ -476,7 +476,7 @@ Stack:
 配置示例
 ```yml
 NoUse:
-	Sitting: true
+  Sitting: true
 ```
 
 ## Trade
@@ -498,15 +498,15 @@ NoUse:
 配置示例
 ```yml
 Trade:
-	NoDrop: true
-	NoTrade: true
-	TradePartner: true
-	NoSell: true
-	NoCart: true
-	NoStorage: true
-	NoGuildStorage: true
-	NoMail: true
-	NoAuction: true
+  NoDrop: true
+  NoTrade: true
+  TradePartner: true
+  NoSell: true
+  NoCart: true
+  NoStorage: true
+  NoGuildStorage: true
+  NoMail: true
+  NoAuction: true
 ```
 
 ## Script
@@ -516,11 +516,11 @@ Trade:
 ```yml
 # 红色药水
 Script: |
-	itemheal rand(45,65),0;
+  itemheal rand(45,65),0;
 
 # 蓝色药水
 Script: |
-	itemheal 0,rand(40,60);
+  itemheal 0,rand(40,60);
 ```
 
 
@@ -530,7 +530,7 @@ Script: |
 配置示例
 ```yml
 EquipScript: |
-	sc_start SC_SUMMER,INFINITE_TICK,0;
+  sc_start SC_SUMMER,INFINITE_TICK,0;
 ```
 
 ## UnEquipScript
@@ -539,5 +539,5 @@ EquipScript: |
 配置示例
 ```yml
 UnEquipScript: |
-	sc_end SC_HIDING;
+  sc_end SC_HIDING;
 ```
