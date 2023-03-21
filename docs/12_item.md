@@ -401,15 +401,6 @@ Gradable: true
 ## Flags
 物品标记。
 
-BuyingStore  - If the item is available to Buying Stores.
-DeadBranch   - If the item is a Dead Branch type.
-Container    - If the item is part of a Container.
-UniqueId     - If the item is a unique stack.
-BindOnEquip  - If the item is bound to the character upon equipping.
-DropAnnounce - If the item has a special announcement to self on drop.
-NoConsume    - If the item is consumed on use.
-DropEffect   - If the item has a special effect on the ground when dropped by a monster.
-
 | 值 | 说明 |
 | --- | --- |
 | `BuyingStore` | 是否可以在个人商店中出售 |
@@ -456,12 +447,6 @@ Delay:
 ## Stack
 物品的堆叠数量。
 
-  Amount       - Maximum amount that can be stacked.
-  Inventory    - If the stack is applied to player's inventory.
-  Cart         - If the stack is applied to the player's cart.
-  Storage      - If the stack is applied to the player's storage.
-  GuildStorage - If the stack is applied to the player's guild storage.
-
 | 值 | 说明 |
 | --- | --- |
 | `Amount` | 最大堆叠数量 |
@@ -483,10 +468,6 @@ Stack:
 ## NoUse
 什么情况下物品无法使用。
 
-NoUse: Conditions when the item is unusable.
-  Override - Group level to override these conditions.
-  Sitting  - If the item can not be used while sitting.
-
 | 值 | 说明 |
 | --- | --- |
 | `Override` | 继承道具组的该条配置 |
@@ -500,17 +481,6 @@ NoUse:
 
 ## Trade
 交易限制。
-
-  Override       - Group level to override these conditions.
-  NoDrop         - If the item can not be dropped.
-  NoTrade        - If the item can not be traded.
-  TradePartner   - If the item can not be traded to the player's partner.
-  NoSell         - If the item can not be sold.
-  NoCart         - If the item can not be put in a cart.
-  NoStorage      - If the item can not be put in a storage.
-  NoGuildStorage - If the item can not be put in a guild storage.
-  NoMail         - If the item can not be put in a mail.
-  NoAuction      - If the item can not be put in an auction.
 
 | 值 | 说明 |
 | --- | --- |
