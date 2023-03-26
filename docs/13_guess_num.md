@@ -36,7 +36,7 @@ if (<condition>) {
 	<statement>
 }
 
-if (Zeny < 100) {
+if (Zeny < 100) { // 负无穷大~99
 	mes "您的 Zeny 不足100";
 	close;
 }
@@ -48,10 +48,10 @@ if (<condition>) {
 	<statement>
 }
 
-if (Zeny < 100) {
+if (Zeny < 100) {// 负无穷大~99
 	mes "您的 Zeny 不足100";
 	close;
-} else {
+} else { // 100~正无穷大
 	mes "您有足够的 Zeny";
 	close;
 }
@@ -65,18 +65,14 @@ if (<condition>) {
 	<statement>
 }
 
-if (Zeny < 100) {
+if (Zeny < 100) { // 负无穷大~99
 	mes "您的 Zeny 不足100";
-	close;
-} else if Zeny < 1000 {
+} else if (Zeny < 1000) { // 100~999
 	mes "您的 Zeny 不足1000";
-	close;
-} else if Zeny < 10000 {
+} else if (Zeny < 10000) { // 1000~9999
 	mes "您的 Zeny 不足10000";
-	close;
-} else {
+} else { // 10000~正无穷大
 	mes "您真是富的流油呢";
-	close;
 }
 ```
 
