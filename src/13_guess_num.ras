@@ -1,0 +1,129 @@
+prontera,152,160,4	script	猜数游戏	909,{
+	mes "[猜数游戏]";
+	mes "您好，^FF0000 " + strcharinfo(0) + " ^000000，欢迎来到猜数游戏！";
+	mes "游戏规则：";
+	mes "我会随机生成一个1~5的数字，您需要猜出这个数字是多少。";
+	mes "每猜一次需要花费 100 Zeny";
+	mes "如果您猜对了，您将获得 100 Zeny 和1个<ITEM>华丽金属<INFO>714</INFO></ITEM>";
+	next;
+
+	mes "[猜数游戏]";
+	if (Zeny < 100) {
+		mes "您的Zeny不足100，无法进行游戏。";
+		close;
+	}
+	mes "您准备好了吗？";
+	mes "那么，开始吧！";
+	next;
+
+	Zeny -= 100;
+
+	mes "[猜数游戏]";
+	mes "我已经生成了一个1~5的数字。";
+	mes "请输入您猜的数字：";
+	.@number = rand(1,5);
+	input .@guess;
+	if(.@guess == .@number) {
+		mes "[猜数游戏]";
+		mes "恭喜您，猜对了！";
+		mes "您获得了^FF0000 100 ^000000 Zeny和一个<ITEM>华丽金属<INFO>714</INFO></ITEM>。";
+		Zeny += 100;
+		getitem 714,1;
+	} else {
+		mes "[猜数游戏]";
+		mes "很遗憾，您猜错了。";
+		mes "正确的数字是^FF0000 " + .@number + " ^000000。";
+	}
+	close;
+}
+
+prontera,154,160,4	script	个人信息	909,{
+	mes "[个人信息]";
+	mes "角色名：" + strcharinfo(0);
+	mes "队伍名：" + strcharinfo(1);
+	mes "公会名：" + strcharinfo(2);
+	mes "所在地图：" + strcharinfo(3);
+	close;
+}
+
+prontera,152,155,4	script	测试If1	909,{
+	mes "[测试If1]";
+	if (Zeny < 100) {
+		mes "您的 Zeny 不足100";
+	}
+	close;
+}
+
+prontera,154,155,4	script	测试If2	909,{
+	mes "[测试If2]";
+	if (Zeny < 100) {
+		mes "您的 Zeny 不足100";
+	} else {
+		mes "您真是富的流油呢";
+	}
+	close;
+}
+
+prontera,156,155,4	script	测试If3	909,{
+	mes "[测试If3]";
+	if (Zeny < 100) {
+		mes "您的 Zeny 不足100";
+	} else if (Zeny < 1000) {
+		mes "您的 Zeny 不足1000";
+	} else if (Zeny < 10000) {
+		mes "您的 Zeny 不足10000";
+	} else {
+		mes "您真是富的流油呢";
+	}
+	close;
+}
+
+prontera,152,150,4	script	测试Zeny1	909,{
+	mes "[测试Zeny1]";
+	mes "你的 Zeny 为：" + Zeny;
+	mes "只要点开我，你的 Zeny 就会变成 1000";
+	Zeny = 1000;
+	close;
+}
+
+prontera,154,150,4	script	测试Zeny2	909,{
+	mes "[测试Zeny2]";
+	mes "你的 Zeny 为：" + Zeny;
+	mes "只要点开我，你的 Zeny 就会 +1000";
+	Zeny += 1000;
+	close;
+}
+
+prontera,156,150,4	script	测试Zeny3	909,{
+	mes "[测试Zeny3]";
+	mes "你的 Zeny 为：" + Zeny;
+	mes "只要点开我，你的 Zeny 就会 -1000";
+	Zeny -= 1000;
+	close;
+}
+
+prontera,152,145,4	script	测试随机	909,{
+	mes "以下是 rand(10) 的结果，期望在 0~9 之间";
+	mes "第一批5次随机：" + rand(10) + " " + rand(10) + " " + rand(10) + " " + rand(10) + " " + rand(10);
+	mes "第二批5次随机：" + rand(10) + " " + rand(10) + " " + rand(10) + " " + rand(10) + " " + rand(10);
+	next;
+	mes "以下是 rand(0,9) 的结果，期望在 0~9 之间";
+	mes "第一批5次随机：" + rand(0,9) + " " + rand(0,9) + " " + rand(0,9) + " " + rand(0,9) + " " + rand(0,9);
+	mes "第二批5次随机：" + rand(0,9) + " " + rand(0,9) + " " + rand(0,9) + " " + rand(0,9) + " " + rand(0,9);
+	next;
+	mes "以下是 rand(2,5) 的结果，期望在 2~5 之间";
+	mes "第一批5次随机：" + rand(2,5) + " " + rand(2,5) + " " + rand(2,5) + " " + rand(2,5) + " " + rand(2,5);
+	mes "第二批5次随机：" + rand(2,5) + " " + rand(2,5) + " " + rand(2,5) + " " + rand(2,5) + " " + rand(2,5);
+	close;
+}
+
+prontera,152,140,4	script	测试输入	909,{
+	mes "请输入一个数字，我会把它打印出来";
+	input .@input;
+	mes "您输入的数字是：" + .@input;
+	next;
+	mes "请输入一个字符串，我会把它打印出来";
+	input .@input$;
+	mes "您输入的字符串是：" + .@input$;
+	close;
+}
